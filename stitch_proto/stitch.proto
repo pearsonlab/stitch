@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package stitch_proto;
+
+service Stitch {
+    rpc GetImage(Request) returns (Image) {}
+}
+
+message Request {
+    int32 size = 1;
+}
+
+message Image {
+    int32 image = 1;
+}
