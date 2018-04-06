@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fb790172-93e2-4ba6-bf47-8539c8fd6163" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/client/client.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/client/slice-mid-1000-200.tif" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/server.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/server_metrics.csv" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/server/slice-mid-1000-200.tif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/caiman/caiman.py" afterPath="$PROJECT_DIR$/caiman/caiman.py" />
+      <change beforePath="$PROJECT_DIR$/stitch/server_metrics.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/stitch/slice-mid-1000-200.tif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/stitch/stitch.go" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -112,21 +111,6 @@
             <path>
               <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
               <item name="stitch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stitch" type="462c0819:PsiDirectoryNode" />
-              <item name="caiman" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stitch" type="462c0819:PsiDirectoryNode" />
-              <item name="stitch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stitch" type="462c0819:PsiDirectoryNode" />
-              <item name="stitch_proto" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />

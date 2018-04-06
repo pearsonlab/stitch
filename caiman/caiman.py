@@ -18,7 +18,7 @@ def run():
 	# print(min(times)/5)
 
 	
-def write(response):
+def write(stub):
 	#make request, get back stream
 	responses = stub.GetImage(stitch_pb2.Request(size=5))
 	#write chunks to file
