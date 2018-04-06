@@ -3,7 +3,7 @@ syntax = "proto3";
 package stitch_proto;
 
 service Stitch {
-    rpc GetImage(Request) returns (Image) {}
+    rpc GetImage(Request) returns (stream Image) {}
 }
 
 message Request {
@@ -11,5 +11,5 @@ message Request {
 }
 
 message Image {
-    int32 image = 1;
+    bytes image = 1;
 }
