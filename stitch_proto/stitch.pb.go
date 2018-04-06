@@ -50,7 +50,7 @@ func (m *Request) GetSize() int32 {
 }
 
 type Image struct {
-	Image int32 `protobuf:"varint,1,opt,name=image" json:"image,omitempty"`
+	Image []byte `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
 }
 
 func (m *Image) Reset()                    { *m = Image{} }
@@ -58,11 +58,11 @@ func (m *Image) String() string            { return proto.CompactTextString(m) }
 func (*Image) ProtoMessage()               {}
 func (*Image) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
 
-func (m *Image) GetImage() int32 {
+func (m *Image) GetImage() []byte {
 	if m != nil {
 		return m.Image
 	}
-	return 0
+	return nil
 }
 
 func init() {
@@ -81,7 +81,7 @@ const _ = grpc.SupportPackageIsVersion4
 // Client API for Stitch service
 
 type StitchClient interface {
-	GetImage(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Image, error)
+	GetImage(ctx context.Context, in *Request, opts ...grpc.CallOption) (Stitch_GetImageClient, error)
 }
 
 type stitchClient struct {
@@ -92,66 +92,94 @@ func NewStitchClient(cc *grpc.ClientConn) StitchClient {
 	return &stitchClient{cc}
 }
 
-func (c *stitchClient) GetImage(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Image, error) {
-	out := new(Image)
-	err := grpc.Invoke(ctx, "/stitch_proto.Stitch/GetImage", in, out, c.cc, opts...)
+func (c *stitchClient) GetImage(ctx context.Context, in *Request, opts ...grpc.CallOption) (Stitch_GetImageClient, error) {
+	stream, err := grpc.NewClientStream(ctx, &_Stitch_serviceDesc.Streams[0], c.cc, "/stitch_proto.Stitch/GetImage", opts...)
 	if err != nil {
 		return nil, err
 	}
-	return out, nil
+	x := &stitchGetImageClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Stitch_GetImageClient interface {
+	Recv() (*Image, error)
+	grpc.ClientStream
+}
+
+type stitchGetImageClient struct {
+	grpc.ClientStream
+}
+
+func (x *stitchGetImageClient) Recv() (*Image, error) {
+	m := new(Image)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
 }
 
 // Server API for Stitch service
 
 type StitchServer interface {
-	GetImage(context.Context, *Request) (*Image, error)
+	GetImage(*Request, Stitch_GetImageServer) error
 }
 
 func RegisterStitchServer(s *grpc.Server, srv StitchServer) {
 	s.RegisterService(&_Stitch_serviceDesc, srv)
 }
 
-func _Stitch_GetImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Request)
-	if err := dec(in); err != nil {
-		return nil, err
+func _Stitch_GetImage_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(Request)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
 	}
-	if interceptor == nil {
-		return srv.(StitchServer).GetImage(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/stitch_proto.Stitch/GetImage",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StitchServer).GetImage(ctx, req.(*Request))
-	}
-	return interceptor(ctx, in, info, handler)
+	return srv.(StitchServer).GetImage(m, &stitchGetImageServer{stream})
+}
+
+type Stitch_GetImageServer interface {
+	Send(*Image) error
+	grpc.ServerStream
+}
+
+type stitchGetImageServer struct {
+	grpc.ServerStream
+}
+
+func (x *stitchGetImageServer) Send(m *Image) error {
+	return x.ServerStream.SendMsg(m)
 }
 
 var _Stitch_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "stitch_proto.Stitch",
 	HandlerType: (*StitchServer)(nil),
-	Methods: []grpc.MethodDesc{
+	Methods:     []grpc.MethodDesc{},
+	Streams: []grpc.StreamDesc{
 		{
-			MethodName: "GetImage",
-			Handler:    _Stitch_GetImage_Handler,
+			StreamName:    "GetImage",
+			Handler:       _Stitch_GetImage_Handler,
+			ServerStreams: true,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
 	Metadata: "stitch.proto",
 }
 
 func init() { proto.RegisterFile("stitch.proto", fileDescriptor0) }
 
 var fileDescriptor0 = []byte{
-	// 127 bytes of a gzipped FileDescriptorProto
+	// 131 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x29, 0x2e, 0xc9, 0x2c,
 	0x49, 0xce, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x82, 0xf2, 0xe2, 0xc1, 0x3c, 0x25, 0x59,
 	0x2e, 0xf6, 0xa0, 0xd4, 0xc2, 0xd2, 0xd4, 0xe2, 0x12, 0x21, 0x21, 0x2e, 0x96, 0xe2, 0xcc, 0xaa,
 	0x54, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xd6, 0x20, 0x30, 0x5b, 0x49, 0x96, 0x8b, 0xd5, 0x33, 0x37,
-	0x31, 0x3d, 0x55, 0x48, 0x84, 0x8b, 0x35, 0x13, 0xc4, 0x80, 0xca, 0x42, 0x38, 0x46, 0x4e, 0x5c,
-	0x6c, 0xc1, 0x60, 0xd3, 0x84, 0x2c, 0xb8, 0x38, 0xdc, 0x53, 0x4b, 0x20, 0x6a, 0x45, 0xf5, 0x90,
-	0xad, 0xd0, 0x83, 0x9a, 0x2f, 0x25, 0x8c, 0x2a, 0x0c, 0x56, 0xab, 0xc4, 0x90, 0xc4, 0x06, 0xe6,
-	0x1a, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0x23, 0xca, 0xc9, 0xdf, 0xa6, 0x00, 0x00, 0x00,
+	0x31, 0x3d, 0x55, 0x48, 0x84, 0x8b, 0x35, 0x13, 0xc4, 0x00, 0xcb, 0xf2, 0x04, 0x41, 0x38, 0x46,
+	0x2e, 0x5c, 0x6c, 0xc1, 0x60, 0xd3, 0x84, 0xac, 0xb8, 0x38, 0xdc, 0x53, 0x4b, 0x20, 0x6a, 0x45,
+	0xf5, 0x90, 0xad, 0xd0, 0x83, 0x9a, 0x2f, 0x25, 0x8c, 0x2a, 0x0c, 0x56, 0xab, 0xc4, 0x60, 0xc0,
+	0x98, 0xc4, 0x06, 0x16, 0x30, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0x2c, 0x12, 0x69, 0x92, 0xa8,
+	0x00, 0x00, 0x00,
 }

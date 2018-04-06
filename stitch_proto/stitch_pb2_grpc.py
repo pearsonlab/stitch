@@ -14,7 +14,7 @@ class StitchStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GetImage = channel.unary_unary(
+    self.GetImage = channel.unary_stream(
         '/stitch_proto.Stitch/GetImage',
         request_serializer=stitch__pb2.Request.SerializeToString,
         response_deserializer=stitch__pb2.Image.FromString,
@@ -35,7 +35,7 @@ class StitchServicer(object):
 
 def add_StitchServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GetImage': grpc.unary_unary_rpc_method_handler(
+      'GetImage': grpc.unary_stream_rpc_method_handler(
           servicer.GetImage,
           request_deserializer=stitch__pb2.Request.FromString,
           response_serializer=stitch__pb2.Image.SerializeToString,
