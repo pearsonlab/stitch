@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package servaiman_proto;
+
+service  Servaiman{
+    rpc GetOut(Request) returns (stream CaimanOut) {}
+}
+
+message Request {
+    int32 size = 1;
+}
+
+message CaimanOut {
+    repeated int32 image = 1;
+}

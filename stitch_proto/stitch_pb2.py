@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stitch.proto',
   package='stitch_proto',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cstitch.proto\x12\x0cstitch_proto\"\x17\n\x07Request\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x05\x32\x42\n\x06Stitch\x12\x38\n\x08GetImage\x12\x15.stitch_proto.Request\x1a\x13.stitch_proto.Image\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0cstitch.proto\x12\x0cstitch_proto\"\x17\n\x07Request\x12\x0c\n\x04size\x18\x01 \x01(\x05\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\x32\x44\n\x06Stitch\x12:\n\x08GetImage\x12\x15.stitch_proto.Request\x1a\x13.stitch_proto.Image\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -65,8 +65,8 @@ _IMAGE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='image', full_name='stitch_proto.Image.image', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -113,7 +113,7 @@ _STITCH = _descriptor.ServiceDescriptor(
   index=0,
   options=None,
   serialized_start=79,
-  serialized_end=145,
+  serialized_end=147,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetImage',
