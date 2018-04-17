@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb790172-93e2-4ba6-bf47-8539c8fd6163" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="" afterPath="$PROJECT_DIR$/Servaiman_proto/servaiman.proto" />
       <change beforePath="" afterPath="$PROJECT_DIR$/caiman/caiman_server.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/caiman/caiman.py" afterPath="$PROJECT_DIR$/caiman/caiman.py" />
+      <change beforePath="$PROJECT_DIR$/stitch/server_metrics.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/stitch/slice-mid-1000-200.tif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/stitch/stitch.go" afterPath="" />
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,16 +23,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="stitch.proto" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stitch_proto/stitch.proto">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+=======
+      <file leaf-file-name="stitch.proto" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stitch_proto/stitch.proto">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="servaiman.proto" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/servaiman_proto/servaiman.proto">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,6 +57,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+=======
+      <file leaf-file-name="python_proto.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python_proto.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
               <folding />
             </state>
           </provider>
@@ -123,6 +147,7 @@
               <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
               <item name="stitch" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="stitch" type="b2602c69:ProjectViewProjectNode" />
               <item name="stitch" type="462c0819:PsiDirectoryNode" />
@@ -138,6 +163,8 @@
               <item name="stitch" type="462c0819:PsiDirectoryNode" />
               <item name="stitch_server" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
           </expand>
           <select />
         </subPane>
@@ -167,9 +194,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1242" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -273,6 +299,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/server/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -285,20 +312,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/stitch_proto/stitch.pb.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="95" column="10" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="10" />
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python_proto.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stitch_proto/stitch.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/servaiman_proto/servaiman.proto">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="210">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
@@ -325,6 +367,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+=======
+        <state relative-caret-position="1410">
+          <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+>>>>>>> 31c09008dd1930257f2b171ee7862bc08ada1578
           <folding />
         </state>
       </provider>
