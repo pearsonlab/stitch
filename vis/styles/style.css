@@ -20,13 +20,13 @@
     overflow-x: auto;
     overflow-y: scroll;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 html {
     color: var(--dark);
     font-size: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
     height: 100%;
     background: var(--light);
     overflow-y:scroll;
@@ -71,4 +71,9 @@ button:hover {
 img{
     max-width:100%;
     height: auto;
+}
+canvas {
+    width: 250px;
+    height: 250px;
+    background: var(--accent_dark)
 }
