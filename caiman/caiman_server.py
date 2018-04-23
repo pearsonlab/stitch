@@ -9,7 +9,7 @@ sys.path.insert(0, '../servaiman_proto')
 import servaiman_pb2
 import servaiman_pb2_grpc
 
-PORT_NUM = '[::]:50051'
+PORT_NUM = '[::]:50055'
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
@@ -27,10 +27,18 @@ class Servaiman(servaiman_pb2_grpc.ServaimanServicer):
         for i in range(request.size):
             yield servaiman_pb2.CaimanOut(image=[i])
         return servaiman_pb2.CaimanOut(image=[request.size])
-    # for j in range(numpy.array(imgPath[2])):
-    # yield servaiman_pb2.CaimanOut(image=[numpy.array(imgPath[i])])
-    # yield servaiman_pb2.CaimanOut(image=j)
-    # print("sent one")
+            np_array = numpy.array(imgPath[i])
+            # if row/column flip,
+            # np_array = numpy.array(imgPath[i].size[1], imPath[i].size[0], 3)
+            rows, columns = np_array.shape
+            yield servaiman_pb2.CaimanOut(rows)
+            yield servaiman_pb2.CaimanOut(columns)
+            for r in rows:
+                for c in columns:
+                    yield servaiman_pb2.CaimanOut(np_array.getpixel((r,c)))
+
+ # sends the height and width of the image
+ # sends black and white values pixel by pixel to go with the int32 standard for Message CaimanOut.Image
 
 
 def serve():
@@ -41,7 +49,7 @@ def serve():
     server.start()
     try:
         while True:
-            time.sleep(_ONE_DAY_IN_SECONDS)
+            time.sleep(30)
     except KeyboardInterrupt:
         server.stop(0)
 
