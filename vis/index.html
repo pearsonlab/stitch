@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--<script src="basic_image.min.js"></script>-->
     <title>Caiman Visualization</title>
     <link href="styles/style.css" type="text/css" rel="stylesheet">
+<!--
     <script src='protobuf.js'></script>
     <script src='bytebuffer.js'></script>
+-->
     <script src='scripts/test.js'></script>
 </head>
 
 <body>
-    <!--onload=basic_image.changeText.waiting()-->
     <h1>Streaming Images</h1>
-    <button id="start" onclick="basic_image.ButtonChange('start','stop').click()" onClick="sendMessage()">Start/stop stream</button>
+    <button id="start" onload="test.init()">Start/stop stream</button>
     <div id="status"></div>
     <div id="row">
         <div id="og_image" class="column">
@@ -24,12 +24,11 @@
         <div id="mod_image" class="column">
             <h1>Streamed Image</h1>
             <canvas id="sentImage"></canvas>
-<!--            <button id="togglePlay" onclick="basic_image.ButtonChange('play','pause').click()">Play or pause</button>-->
         </div>
     </div>
 
-    <script src="basic_image.min.js"></script>
-    <!--for faster load time-->
+    <!--    <script src="basic_image.min.js"></script>-->
+    <!--for faster load time, if make from converting from python with transcrypt-->
 </body>
 
 </html>

@@ -26,50 +26,50 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.servaiman_proto.Request = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.servaiman_proto.Request = function (opt_data) {
+    jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.servaiman_proto.Request, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.servaiman_proto.Request.displayName = 'proto.servaiman_proto.Request';
+    proto.servaiman_proto.Request.displayName = 'proto.servaiman_proto.Request';
 }
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.servaiman_proto.Request.prototype.toObject = function(opt_includeInstance) {
-  return proto.servaiman_proto.Request.toObject(opt_includeInstance, this);
-};
+    /**
+     * Creates an object representation of this proto suitable for use in Soy templates.
+     * Field names that are reserved in JavaScript and will be renamed to pb_name.
+     * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+     * For the list of reserved names please see:
+     *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+     * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+     *     for transitional soy proto support: http://goto/soy-param-migration
+     * @return {!Object}
+     */
+    proto.servaiman_proto.Request.prototype.toObject = function (opt_includeInstance) {
+        return proto.servaiman_proto.Request.toObject(opt_includeInstance, this);
+    };
 
 
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.servaiman_proto.Request} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.servaiman_proto.Request.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    size: jspb.Message.getFieldWithDefault(msg, 1, 0)
-  };
+    /**
+     * Static version of the {@see toObject} method.
+     * @param {boolean|undefined} includeInstance Whether to include the JSPB
+     *     instance for transitional soy proto support:
+     *     http://goto/soy-param-migration
+     * @param {!proto.servaiman_proto.Request} msg The msg instance to transform.
+     * @return {!Object}
+     * @suppress {unusedLocalVariables} f is only used for nested messages
+     */
+    proto.servaiman_proto.Request.toObject = function (includeInstance, msg) {
+        var f, obj = {
+            size: jspb.Message.getFieldWithDefault(msg, 1, 0)
+        };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+        if (includeInstance) {
+            obj.$jspbMessageInstance = msg;
+        }
+        return obj;
+    };
 }
 
 
@@ -78,10 +78,10 @@ proto.servaiman_proto.Request.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.servaiman_proto.Request}
  */
-proto.servaiman_proto.Request.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.servaiman_proto.Request;
-  return proto.servaiman_proto.Request.deserializeBinaryFromReader(msg, reader);
+proto.servaiman_proto.Request.deserializeBinary = function (bytes) {
+    var reader = new jspb.BinaryReader(bytes);
+    var msg = new proto.servaiman_proto.Request;
+    return proto.servaiman_proto.Request.deserializeBinaryFromReader(msg, reader);
 };
 
 
@@ -92,23 +92,23 @@ proto.servaiman_proto.Request.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.servaiman_proto.Request}
  */
-proto.servaiman_proto.Request.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
+proto.servaiman_proto.Request.deserializeBinaryFromReader = function (msg, reader) {
+    while (reader.nextField()) {
+        if (reader.isEndGroup()) {
+            break;
+        }
+        var field = reader.getFieldNumber();
+        switch (field) {
+            case 1:
+                var value = /** @type {number} */ (reader.readInt32());
+                msg.setSize(value);
+                break;
+            default:
+                reader.skipField();
+                break;
+        }
     }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSize(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
+    return msg;
 };
 
 
@@ -116,10 +116,10 @@ proto.servaiman_proto.Request.deserializeBinaryFromReader = function(msg, reader
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.servaiman_proto.Request.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.servaiman_proto.Request.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
+proto.servaiman_proto.Request.prototype.serializeBinary = function () {
+    var writer = new jspb.BinaryWriter();
+    proto.servaiman_proto.Request.serializeBinaryToWriter(this, writer);
+    return writer.getResultBuffer();
 };
 
 
@@ -130,15 +130,15 @@ proto.servaiman_proto.Request.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.servaiman_proto.Request.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getSize();
-  if (f !== 0) {
-    writer.writeInt32(
-      1,
-      f
-    );
-  }
+proto.servaiman_proto.Request.serializeBinaryToWriter = function (message, writer) {
+    var f = undefined;
+    f = message.getSize();
+    if (f !== 0) {
+        writer.writeInt32(
+            1,
+            f
+        );
+    }
 };
 
 
@@ -146,14 +146,14 @@ proto.servaiman_proto.Request.serializeBinaryToWriter = function(message, writer
  * optional int32 size = 1;
  * @return {number}
  */
-proto.servaiman_proto.Request.prototype.getSize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.servaiman_proto.Request.prototype.getSize = function () {
+    return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.servaiman_proto.Request.prototype.setSize = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+proto.servaiman_proto.Request.prototype.setSize = function (value) {
+    jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -168,12 +168,12 @@ proto.servaiman_proto.Request.prototype.setSize = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.servaiman_proto.CaimanOut = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.servaiman_proto.CaimanOut.repeatedFields_, null);
+proto.servaiman_proto.CaimanOut = function (opt_data) {
+    jspb.Message.initialize(this, opt_data, 0, -1, proto.servaiman_proto.CaimanOut.repeatedFields_, null);
 };
 goog.inherits(proto.servaiman_proto.CaimanOut, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.servaiman_proto.CaimanOut.displayName = 'proto.servaiman_proto.CaimanOut';
+    proto.servaiman_proto.CaimanOut.displayName = 'proto.servaiman_proto.CaimanOut';
 }
 /**
  * List of repeated fields within this message type.
@@ -185,40 +185,40 @@ proto.servaiman_proto.CaimanOut.repeatedFields_ = [1];
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.servaiman_proto.CaimanOut.prototype.toObject = function(opt_includeInstance) {
-  return proto.servaiman_proto.CaimanOut.toObject(opt_includeInstance, this);
-};
+    /**
+     * Creates an object representation of this proto suitable for use in Soy templates.
+     * Field names that are reserved in JavaScript and will be renamed to pb_name.
+     * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+     * For the list of reserved names please see:
+     *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+     * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+     *     for transitional soy proto support: http://goto/soy-param-migration
+     * @return {!Object}
+     */
+    proto.servaiman_proto.CaimanOut.prototype.toObject = function (opt_includeInstance) {
+        return proto.servaiman_proto.CaimanOut.toObject(opt_includeInstance, this);
+    };
 
 
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.servaiman_proto.CaimanOut} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.servaiman_proto.CaimanOut.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    imageList: jspb.Message.getRepeatedField(msg, 1)
-  };
+    /**
+     * Static version of the {@see toObject} method.
+     * @param {boolean|undefined} includeInstance Whether to include the JSPB
+     *     instance for transitional soy proto support:
+     *     http://goto/soy-param-migration
+     * @param {!proto.servaiman_proto.CaimanOut} msg The msg instance to transform.
+     * @return {!Object}
+     * @suppress {unusedLocalVariables} f is only used for nested messages
+     */
+    proto.servaiman_proto.CaimanOut.toObject = function (includeInstance, msg) {
+        var f, obj = {
+            imageList: jspb.Message.getRepeatedField(msg, 1)
+        };
 
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
+        if (includeInstance) {
+            obj.$jspbMessageInstance = msg;
+        }
+        return obj;
+    };
 }
 
 
@@ -227,10 +227,10 @@ proto.servaiman_proto.CaimanOut.toObject = function(includeInstance, msg) {
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.servaiman_proto.CaimanOut}
  */
-proto.servaiman_proto.CaimanOut.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.servaiman_proto.CaimanOut;
-  return proto.servaiman_proto.CaimanOut.deserializeBinaryFromReader(msg, reader);
+proto.servaiman_proto.CaimanOut.deserializeBinary = function (bytes) {
+    var reader = new jspb.BinaryReader(bytes);
+    var msg = new proto.servaiman_proto.CaimanOut;
+    return proto.servaiman_proto.CaimanOut.deserializeBinaryFromReader(msg, reader);
 };
 
 
@@ -241,23 +241,23 @@ proto.servaiman_proto.CaimanOut.deserializeBinary = function(bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.servaiman_proto.CaimanOut}
  */
-proto.servaiman_proto.CaimanOut.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
+proto.servaiman_proto.CaimanOut.deserializeBinaryFromReader = function (msg, reader) {
+    while (reader.nextField()) {
+        if (reader.isEndGroup()) {
+            break;
+        }
+        var field = reader.getFieldNumber();
+        switch (field) {
+            case 1:
+                var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
+                msg.setImageList(value);
+                break;
+            default:
+                reader.skipField();
+                break;
+        }
     }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setImageList(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
+    return msg;
 };
 
 
@@ -265,10 +265,10 @@ proto.servaiman_proto.CaimanOut.deserializeBinaryFromReader = function(msg, read
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.servaiman_proto.CaimanOut.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.servaiman_proto.CaimanOut.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
+proto.servaiman_proto.CaimanOut.prototype.serializeBinary = function () {
+    var writer = new jspb.BinaryWriter();
+    proto.servaiman_proto.CaimanOut.serializeBinaryToWriter(this, writer);
+    return writer.getResultBuffer();
 };
 
 
@@ -279,15 +279,15 @@ proto.servaiman_proto.CaimanOut.prototype.serializeBinary = function() {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.servaiman_proto.CaimanOut.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getImageList();
-  if (f.length > 0) {
-    writer.writePackedInt32(
-      1,
-      f
-    );
-  }
+proto.servaiman_proto.CaimanOut.serializeBinaryToWriter = function (message, writer) {
+    var f = undefined;
+    f = message.getImageList();
+    if (f.length > 0) {
+        writer.writePackedInt32(
+            1,
+            f
+        );
+    }
 };
 
 
@@ -295,14 +295,14 @@ proto.servaiman_proto.CaimanOut.serializeBinaryToWriter = function(message, writ
  * repeated int32 image = 1;
  * @return {!Array<number>}
  */
-proto.servaiman_proto.CaimanOut.prototype.getImageList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+proto.servaiman_proto.CaimanOut.prototype.getImageList = function () {
+    return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /** @param {!Array<number>} value */
-proto.servaiman_proto.CaimanOut.prototype.setImageList = function(value) {
-  jspb.Message.setField(this, 1, value || []);
+proto.servaiman_proto.CaimanOut.prototype.setImageList = function (value) {
+    jspb.Message.setField(this, 1, value || []);
 };
 
 
@@ -310,13 +310,11 @@ proto.servaiman_proto.CaimanOut.prototype.setImageList = function(value) {
  * @param {!number} value
  * @param {number=} opt_index
  */
-proto.servaiman_proto.CaimanOut.prototype.addImage = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+proto.servaiman_proto.CaimanOut.prototype.addImage = function (value, opt_index) {
+    jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
-proto.servaiman_proto.CaimanOut.prototype.clearImageList = function() {
-  this.setImageList([]);
+proto.servaiman_proto.CaimanOut.prototype.clearImageList = function () {
+    this.setImageList([]);
 };
-
-

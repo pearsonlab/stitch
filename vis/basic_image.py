@@ -3,25 +3,19 @@
 import numpy as numpy
 from PIL import Image
 
-boolean isStreaming = false
-boolean isPlaying = false
+#boolean isStreaming = false
+#boolean isPlaying = false
 
-
-jpegPath = 'david_corgi.jpg'
-pngPath = 'sunset-trees-no-sun.jpg'
-tifPath = 'slice-mid-1000-200.tif'
-
-jpeg_img = Image.open(jpegPath)
-
-jpeg_arr = numpy.array(jpeg_img)
-
-new_jpeg_img = Image.fromarray(jpeg_arr)
-
-jpeg_img.save('og.jpeg')
-
-new_jpeg_img.save('mod.jpeg')
-
-
+# Testing numpy to image and back
+#jpeg_img = Image.open(jpegPath)
+#
+#jpeg_arr = numpy.array(jpeg_img)
+#
+#new_jpeg_img = Image.fromarray(jpeg_arr)
+#
+#jpeg_img.save('og.jpeg')
+#
+#new_jpeg_img.save('mod.jpeg')
 
 class ChangeText:
     def __init__ (self):
