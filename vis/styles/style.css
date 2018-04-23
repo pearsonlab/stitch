@@ -1,0 +1,74 @@
+:root {
+    --main: #B8E094;
+    --main_light: #EAF7CF;
+    --main_dark: #bee09f;
+    --accent_light: #EDCE9C;
+    --accent_dark: #B5DFCA;
+    --light: #f2f2f2;
+    --dark: #617073;
+}
+
+* {
+    /* reset default values */
+    box-sizing: border-box;
+    background-color: var(--light);
+    margin: 0 auto;
+    padding: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: 0 0;
+    overflow-x: auto;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+html {
+    color: var(--dark);
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    background: var(--light);
+    overflow-y:scroll;
+}
+h1 {
+    padding: 10px;
+}
+body {
+    text-align: center;
+}
+
+button {
+    display: inline-block;
+    font-size: ;
+    margin: auto;
+    padding: 0.6em;
+    background: var(--accent_dark);
+    color: var(--light);
+    text-align: center;
+    border-radius: 10px;
+    border: 0;
+}
+button:hover {
+    background: var(--accent_light);
+}
+
+.row {
+    column-count: 2;
+    column-gap:10px;
+    column-width: 200px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column{
+    float:left;
+    width: 50%;
+}
+
+img{
+    max-width:100%;
+    height: auto;
+}
