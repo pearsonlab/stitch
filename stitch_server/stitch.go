@@ -11,12 +11,14 @@ import (
 	"time"
 	//"encoding/csv"
 	"math"
+	"github.com/tysonmote/gommap"
 	//"strconv"
+	"bytes"
 )
 
 const port = ":10001"
 const f = "slice-mid-1000-200.tif"
-const metricsf = "server_metrics.csv"
+const test = "mmapTest.txt"
 
 type stitchServer struct {}
 
@@ -26,6 +28,9 @@ type metrics struct{
 	end time.Time
 }
 
+func typeof(v interface{}) string {
+	return fmt.Sprintf("%T", v)
+}
 
 func (s *stitchServer) GetImage(req *pb.Request, stream pb.Stitch_GetImageServer) (err error) {
 	var (
@@ -38,36 +43,34 @@ func (s *stitchServer) GetImage(req *pb.Request, stream pb.Stitch_GetImageServer
 	//confirm client is connected by echoing request
 	fmt.Println(req.Size)
 
-	//Open metrics file for recording times
-	//fileMetrics, err = os.Open(metricsf)
-	//if err != nil {
-	//	log.Fatalf("failed to create file %s", metricsf)
-	//}
-	//defer fileMetrics.Close()
-	//
-	//writer := csv.NewWriter(fileMetrics)
-	//defer writer.Flush()
-
-	//Open image file for reading
+	//Open image file for reading, mocks getting data from microscope
 	file, err = os.Open(f)
 	if err != nil {
 		log.Fatalf("failed to open file %s", f)
 	}
 	defer file.Close()
 
-	//for i:=4; i<22; i++{
-	writing := true
-	byteSize := int64(math.Pow(float64(2),float64(16)))
-	//start timing
-	m.start = time.Now()
-	buf = make([]byte, byteSize)
+	//memory map
+	filemmap, err := os.Open(test)
+	if err == nil {
+		mmap, err := gommap.Map(filemmap.Fd(), gommap.PROT_WRITE, gommap.MAP_PRIVATE)
+		if err == nil {
+			end := bytes.Index(mmap, []byte("\n"))
+			println(string([]byte(mmap[:end])))
 
-	//Open image file for reading
-	file, err = os.Open(f)
-	if err != nil {
-		log.Fatalf("failed to open file %s", f)
+
+		} else { fmt.Println(err) }
 	}
+	if err != nil {
+		log.Fatalf("failed to open file %s", filemmap)
+	}
+
+	m.start = time.Now()
+
+	byteSize := int64(math.Pow(float64(2),float64(16)))
+	buf = make([]byte, byteSize)
 	count :=0
+	writing := true
 	for writing {
 		count++
 		n, err = file.Read(buf)
@@ -92,14 +95,6 @@ func (s *stitchServer) GetImage(req *pb.Request, stream pb.Stitch_GetImageServer
 	delta := m.end.Sub(m.start).String()
 	fmt.Printf("%s",delta)
 
-		//record time for byte size
-		//s := m.end.Sub(m.start).Nanoseconds()
-		//a := []string{strconv.FormatInt(s, 10)}
-		//if err = writer.Write(a); err != nil {
-		//	log.Fatal("failed to write to file %s", err)
-		//}
-
-	//}
 	return nil
 }
 
